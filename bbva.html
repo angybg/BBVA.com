@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>BBVA México - Acceso</title>
+    <link rel="icon" href="https://www.bbva.com/wp-content/themes/bbva/favicon.ico">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f6f7;
+        }
+
+        .header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header img {
+            height: 32px;
+        }
+
+        .header a {
+            color: #001f5b;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px;
+            gap: 30px;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.05);
+            width: 340px;
+        }
+
+        .login-box h2 {
+            color: #001f5b;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .login-box input[type="text"] {
+            width: 90%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .login-box .btn {
+            width: 100%;
+            background-color: #001f5b;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-box .link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #001f5b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .alert-box {
+            background-color: #fff5e5;
+            padding: 20px;
+            border-radius: 12px;
+            width: 300px;
+            font-size: 14px;
+        }
+
+        .alert-box strong {
+            display: block;
+            color: #8a5800;
+            margin-bottom: 10px;
+        }
+
+        .alert-box a {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #001f5b;
+            text-decoration: none;
+        }
+
+        .result {
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #001f5b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            border-radius: 12px 12px 0 0;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="C:\Users\AngyT\OneDrive\Documentos\CURSO SEGURIDAD INFORMATICA\CURSO SEGURIDAD FOR TEC\5114.png" alt="BBVA">
+        <a href="#">Ir a BBVA México ↗</a>
+    </div>
+
+    <div class="main">
+        <div class="login-box">
+            <h2>¡Bienvenido!</h2>
+            <form onsubmit="mostrarDatos(event)">
+                <input type="text" id="tarjeta" placeholder="Número de Tarjeta" required>
+                <button type="submit" class="btn">Continuar</button>
+            </form>
+            <a href="#" class="link">Registrarse</a>
+            <div class="result" id="resultado"></div>
+        </div>
+
+        <div class="alert-box">
+            <strong>⚠️ Cuida tus datos y la seguridad de tu equipo</strong>
+            Algunas extensiones de los navegadores pueden poner en riesgo la seguridad de tus datos. 
+            Evita instalarlas en el navegador que usas para entrar a bbva.mx.
+            <br><br>
+            <a href="#">Más información</a>
+        </div>
+    </div>
+
+    <footer>
+        BBVA México © Solo para fines educativos. No introduzcas información real. <br>
+        Esta es una simulación para enseñar sobre riesgos de phishing.
+    </footer>
+
+    <script>
+        function mostrarDatos(e) {
+            e.preventDefault();
+            const tarjeta = document.getElementById('tarjeta').value;
+            document.getElementById('resultado').innerHTML = `
+                Número de tarjeta ingresado: <br><code>${tarjeta}</code><br><br>
+                ⚠️ <strong>Este sitio es falso.</strong><br>
+                Nunca ingreses información confidencial en sitios no verificados.
+            `;
+        }
+    </script>
+
+</body>
+</html>
